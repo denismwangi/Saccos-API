@@ -28,7 +28,7 @@ Saccos EndPoints
 
 
 ## register
-
+---
 public function register(Request $request ,User $user){
    $validator = Validator::make($request->all(),[
         'name' => ['required', 'string', 'max:255'],
@@ -52,7 +52,7 @@ public function register(Request $request ,User $user){
 
       
 }
-
+---
 - POST http://127.0.0.1:8000/api/auth/register
 
 - {
