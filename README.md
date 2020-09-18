@@ -140,7 +140,7 @@ PUT  http://127.0.0.1:8000/api/auth/updateprofile/{id}
 
 ## Deleting and Restoring User
 DELETE http://127.0.0.1:8000/api/auth/deleteuser/{id}
-POST http://127.0.0.1:8000/api/auth/restoreuser/{id} 
+
 ```php
     /**
      * Remove the specified resource from storage.
@@ -153,8 +153,11 @@ POST http://127.0.0.1:8000/api/auth/restoreuser/{id}
          $user->delete();
         return response()->json(["message" => "deleted successfully!!"], 200);
     }
-
-    
+```
+## Restore Deleted User
+POST http://127.0.0.1:8000/api/auth/restoreuser/{id} 
+   
+   ```php
     public function restore($id, User $user){
 
        $data = User::withTrashed()->find($id);
