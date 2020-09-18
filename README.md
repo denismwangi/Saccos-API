@@ -9,12 +9,12 @@ end points
 <<<<<<< HEAD
 authentication EndPoints
 
-POST http://127.0.0.1:8000/api/auth/login
-POST http://127.0.0.1:8000/api/auth/register
-PUT  http://127.0.0.1:8000/api/auth/updateprofile/{id}
-GET  http://127.0.0.1:8000/api/auth/allusers
-DELETE http://127.0.0.1:8000/api/auth/deleteuser/{id}
-POST http://127.0.0.1:8000/api/auth/restoreuser/{id} 
+- POST http://127.0.0.1:8000/api/auth/login
+- POST http://127.0.0.1:8000/api/auth/register
+- PUT  http://127.0.0.1:8000/api/auth/updateprofile/{id}
+- GET  http://127.0.0.1:8000/api/auth/allusers
+- DELETE http://127.0.0.1:8000/api/auth/deleteuser/{id}
+- POST http://127.0.0.1:8000/api/auth/restoreuser/{id} 
 
 Saccos EndPoints 
 
