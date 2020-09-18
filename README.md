@@ -65,7 +65,7 @@ public function register(Request $request ,User $user){
 ```
 
 ## login
-
+```php
 public function login(Request $request ,User $user){
 
         $request->validate([
@@ -93,10 +93,11 @@ public function login(Request $request ,User $user){
         }
     }
 
-
+```
 
 POST = http://127.0.0.1:8000/api/auth/login
 
+```json
 {
     "user data": {
         "message": "successfully login",
@@ -115,11 +116,11 @@ POST = http://127.0.0.1:8000/api/auth/login
         "token_type": "Bearer"
     }
 }
-
+```
 ## updating User profile
 
 PUT  http://127.0.0.1:8000/api/auth/updateprofile/{id}
-
+```php
 /**
      * Update the specified resource in storage.
      *
@@ -135,12 +136,12 @@ PUT  http://127.0.0.1:8000/api/auth/updateprofile/{id}
       return response()->json(["message" => "updated successfully!!"], 200);
     }
 
-
+```
 
 ## Deleting and Restoring User
 DELETE http://127.0.0.1:8000/api/auth/deleteuser/{id}
 POST http://127.0.0.1:8000/api/auth/restoreuser/{id} 
-
+```php
     /**
      * Remove the specified resource from storage.
      *
@@ -163,10 +164,10 @@ POST http://127.0.0.1:8000/api/auth/restoreuser/{id}
 
     }
 
-
+```
 
 ## all users
-
+```php
 /**
      * Show the form for creating a new resource.
      *
@@ -179,9 +180,9 @@ POST http://127.0.0.1:8000/api/auth/restoreuser/{id}
         return response()->json(["users" =>$user]);
 
     }
-
+```
 GET  http://127.0.0.1:8000/api/auth/allusers
-
+```json
 {
     "users": {
         "current_page": 1,
@@ -249,9 +250,9 @@ GET  http://127.0.0.1:8000/api/auth/allusers
         "total": 8
     }
 }
-
+```
 ## saccos --------------------------------------
-
+```php
 public function store(Request $request)
     {
         
@@ -274,15 +275,17 @@ public function store(Request $request)
     return response()->json(['success'=>" sacco created successfully"], 200);
         
     }
-
+```
 POST http://127.0.0.1:8000/api/createsacco 
+```json
 {
     "success": " sacco created successfully"
 }
-
+```
 ## All saccos
 
 GET  http://127.0.0.1:8000/api/allsaccos 
+```php
 /**
      * Display a listing of the resource.
      *
@@ -296,19 +299,18 @@ GET  http://127.0.0.1:8000/api/allsaccos
 
     }
 
-
+```
 
 =======
->>>>>>> 1180bb3d9197205c9be88461971dffd2d1b4f6a5
+
 ## Contributing
 
 
 ## Code of Conduct
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 1180bb3d9197205c9be88461971dffd2d1b4f6a5
+
+
 
 ## Security Vulnerabilities
 
@@ -316,7 +318,4 @@ GET  http://127.0.0.1:8000/api/allsaccos
 
 ## License
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 1180bb3d9197205c9be88461971dffd2d1b4f6a5
