@@ -1,8 +1,12 @@
 
+<<<<<<< HEAD
 ## About Laravel-8x-API
+=======
+>>>>>>> 1180bb3d9197205c9be88461971dffd2d1b4f6a5
 
 end points 
 
+<<<<<<< HEAD
 authentication EndPoints
 
 POST http://127.0.0.1:8000/api/auth/login
@@ -299,12 +303,17 @@ GET  http://127.0.0.1:8000/api/allsaccos
 
 
 
+=======
+>>>>>>> 1180bb3d9197205c9be88461971dffd2d1b4f6a5
 ## Contributing
 
 
 ## Code of Conduct
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1180bb3d9197205c9be88461971dffd2d1b4f6a5
 
 ## Security Vulnerabilities
 
@@ -312,3 +321,7 @@ GET  http://127.0.0.1:8000/api/allsaccos
 
 ## License
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1180bb3d9197205c9be88461971dffd2d1b4f6a5
