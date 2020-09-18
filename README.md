@@ -29,7 +29,6 @@ Saccos EndPoints
 
 ## register
 
-
 public function register(Request $request ,User $user){
    $validator = Validator::make($request->all(),[
         'name' => ['required', 'string', 'max:255'],
@@ -37,9 +36,10 @@ public function register(Request $request ,User $user){
            'password' => ['required', 'string', 'min:8'],
           'c_password' =>'required|same:password',
     ]);
+
     if ($validator->fails()) {
         return response()->json(['error' =>$validator->errors()], 401);
-       .
+        
         
     }
     $input = $request->all();
@@ -55,10 +55,10 @@ public function register(Request $request ,User $user){
 
 - POST http://127.0.0.1:8000/api/auth/register
 
- {
-    "message": "register success",
-    "success": {
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTVkNDM0NGNmYWJjYzY5MTIzMDIwZmY0OTZmMDY5NGFhOTc0NmRhM2QzNzZmY2IwNThkNTI3OTU4NTBjMjFmY2Q3MjY1ZWJhZTIxZWZiMjciLCJpYXQiOjE2MDA0MzIzMzAsIm5iZiI6MTYwMDQzMjMzMCwiZXhwIjoxNjMxOTY4MzMwLCJzdWIiOiIxMSIsInNjb3BlcyI6W119.Zmbdjc5rWgyArpPncD-m_qjHvVJAJpoxT4IKCoDajAql-uFfWc4t51ifHjT2-3XhvMccsLNY_s_n3GbRmMDZlLvkIhp0l0De7mUli2gy1BjBJQp6u1G_OMibDfhoTDh4ayL6nfQC5bISSXLaIMRdca6b9KdfqfbZRPa1KHAxQ6tkkTJWKqewKYPitXRlCE0OH1tFPIm3hKj8sT8mgOBlcFzqrvxr-it2ApFKiinaEMFJidyvNHFfljD9bKgavgv1_vYbvhdAla3t_hNlNuNL7-OgxZcGCVt8f1D3NBFVAPxX2i3-q9udUpMlOKVU1fg5ANpHYF3uDXD1ofxWRyTLcH-Sr6HWpBlGW6W796TlXFXO9ILuW9-q4Uu8WxO2CFwaiUFF2bQ-FxwufPG9SedqcmP_mMDwO6SUpOaKmrrI36_GuMA4ZwZ4WoTerVnHDsheTlwaMFQgFjVXjQPAV5FMPlXqWWR77xlIRNkKTzy-wzW9Qo7x3hL4R-Be-Q10jobUNgs5qsmezFbmP_zQtrQx-JBBfVCMI9VFqeSDV3Is3w9vQVIVu-rxUmy_rauR9oNDRie1naTafs6IhW49Bq1itVOf3jgdxqs_HliBczOisCCYMHPDYiRnngT3ff_3r3DkQ2Fvy2W2HP5hUB7hHEb67ZO5ttIVRzjUSDoIcoHSQkA",
+- {
+ -   "message": "register success",
+ -   "success": {
+  -      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTVkNDM0NGNmYWJjYzY5MTIzMDIwZmY0OTZmMDY5NGFhOTc0NmRhM2QzNzZmY2IwNThkNTI3OTU4NTBjMjFmY2Q3MjY1ZWJhZTIxZWZiMjciLCJpYXQiOjE2MDA0MzIzMzAsIm5iZiI6MTYwMDQzMjMzMCwiZXhwIjoxNjMxOTY4MzMwLCJzdWIiOiIxMSIsInNjb3BlcyI6W119.Zmbdjc5rWgyArpPncD-m_qjHvVJAJpoxT4IKCoDajAql-uFfWc4t51ifHjT2-3XhvMccsLNY_s_n3GbRmMDZlLvkIhp0l0De7mUli2gy1BjBJQp6u1G_OMibDfhoTDh4ayL6nfQC5bISSXLaIMRdca6b9KdfqfbZRPa1KHAxQ6tkkTJWKqewKYPitXRlCE0OH1tFPIm3hKj8sT8mgOBlcFzqrvxr-it2ApFKiinaEMFJidyvNHFfljD9bKgavgv1_vYbvhdAla3t_hNlNuNL7-OgxZcGCVt8f1D3NBFVAPxX2i3-q9udUpMlOKVU1fg5ANpHYF3uDXD1ofxWRyTLcH-Sr6HWpBlGW6W796TlXFXO9ILuW9-q4Uu8WxO2CFwaiUFF2bQ-FxwufPG9SedqcmP_mMDwO6SUpOaKmrrI36_GuMA4ZwZ4WoTerVnHDsheTlwaMFQgFjVXjQPAV5FMPlXqWWR77xlIRNkKTzy-wzW9Qo7x3hL4R-Be-Q10jobUNgs5qsmezFbmP_zQtrQx-JBBfVCMI9VFqeSDV3Is3w9vQVIVu-rxUmy_rauR9oNDRie1naTafs6IhW49Bq1itVOf3jgdxqs_HliBczOisCCYMHPDYiRnngT3ff_3r3DkQ2Fvy2W2HP5hUB7hHEb67ZO5ttIVRzjUSDoIcoHSQkA",
        "name": "dennis"
    }
  }
