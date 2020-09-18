@@ -287,7 +287,6 @@ POST http://127.0.0.1:8000/api/createsacco
 ```
 ## All saccos
 
-GET  http://127.0.0.1:8000/api/allsaccos 
 ```php
 /**
      * Display a listing of the resource.
