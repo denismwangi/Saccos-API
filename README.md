@@ -1,7 +1,7 @@
 
 
 ## About Laravel-8x-API
-=======
+This API is created using Laravel 8x API Resource. It has Users, and saccos. Protected routes are also added. Protected routes are accessed via Passport access token.
 
 
 ## end points 
@@ -366,19 +366,45 @@ GET  http://127.0.0.1:8000/api/allsaccos
 ```
 =======
 
+#### Usage
+Clone the project via git clone or download the zip file.
+
+##### .env
+Copy contents of .env.example file to .env file. Create a database and connect your database in .env file.
+##### Composer Install
+cd into the project directory via terminal and run the following  command to install composer packages.
+###### `composer install`
+##### Generate Key
+then run the following command to generate fresh key.
+###### `php artisan key:generate`
+##### Run Migration
+then run the following command to create migrations in the databbase.
+###### `php artisan migrate`
+##### Passport Install
+run the following command to install passport
+###### `php artisan passport:install`
+##### Make Auth System
+then run the following command to generate the auth Scaffolding.
+###### `php artisan make:auth`
+##### Database Seeding
+finally run the following command to seed the database with dummy content.
+###### `php artisan db:seed`
+
 ## Contributing
 
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+Please make sure to update tests as appropriate.
 ## Code of Conduct
 
-
+Please make sure to update tests as appropriate.
 
 
 
 ## Security Vulnerabilities
 
-
+Please inform me if you find any security vulnerabilities
 
 ## License
 
-
+[MIT](https://choosealicense.com/licenses/mit/)
