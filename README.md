@@ -303,7 +303,68 @@ GET  http://127.0.0.1:8000/api/allsaccos
     }
 
 ```
-
+GET  http://127.0.0.1:8000/api/allsaccos 
+```php
+{
+    "saccos": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 1,
+                "name": "chama test",
+                "description": "chama to contribute",
+                "time_of_contribution": "12:00",
+                "min_to_contribute": "100",
+                "created_at": "2020-09-18T10:13:06.000000Z",
+                "updated_at": "2020-09-18T10:13:06.000000Z",
+                "deleted_at": null
+            },
+            {
+                "id": 2,
+                "name": "demo",
+                "description": "demo test",
+                "time_of_contribution": "12:00",
+                "min_to_contribute": "20",
+                "created_at": "2020-09-18T10:27:28.000000Z",
+                "updated_at": "2020-09-18T10:27:28.000000Z",
+                "deleted_at": null
+            }
+        ],
+        "first_page_url": "http://127.0.0.1:8000/api/allsaccos?page=1",
+        "from": 1,
+        "last_page": 2,
+        "last_page_url": "http://127.0.0.1:8000/api/allsaccos?page=2",
+        "links": [
+            {
+                "url": null,
+                "label": "Previous",
+                "active": false
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/allsaccos?page=1",
+                "label": 1,
+                "active": true
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/allsaccos?page=2",
+                "label": 2,
+                "active": false
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/allsaccos?page=2",
+                "label": "Next",
+                "active": false
+            }
+        ],
+        "next_page_url": "http://127.0.0.1:8000/api/allsaccos?page=2",
+        "path": "http://127.0.0.1:8000/api/allsaccos",
+        "per_page": 2,
+        "prev_page_url": null,
+        "to": 2,
+        "total": 3
+    }
+}
+```
 =======
 
 ## Contributing
