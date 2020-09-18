@@ -4,7 +4,7 @@
 =======
 
 
-end points 
+## end points 
 
 
 authentication EndPoints
@@ -138,7 +138,7 @@ PUT  http://127.0.0.1:8000/api/auth/updateprofile/{id}
 
 ```
 
-## Deleting and Restoring User
+## Deleting User
 DELETE http://127.0.0.1:8000/api/auth/deleteuser/{id}
 
 ```php
