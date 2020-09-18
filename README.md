@@ -1,7 +1,7 @@
 
 
 ## About Laravel-8x-API
-This API is created using Laravel 8x API Resource. It has Users, and saccos. Protected routes are also added. Protected routes are accessed via Passport access token.
+This API is created using Laravel 8x API Resource. Has email Registration Verification. registration if saccos Protected routes are also added. Protected routes are accessed via Passport access token.
 
 
 ## end points 
