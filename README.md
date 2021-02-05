@@ -394,6 +394,9 @@ run the following command to install passport
 ###### `php artisan passport:install`
 then run the following command to create migrations in the databbase.
 ###### `php artisan migrate`
+then run the following command to run the api.
+###### `php artisan serve`
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
