@@ -1,7 +1,7 @@
 
 
 ## About Laravel-8x-API
-This API is created using Laravel 8x API Resource. Has email Registration . registration of saccos,, Protected routes are also added. Protected routes are accessed via Passport access token.
+This API is created using Laravel 8x API Resource. Has email or phone Registration . registration of saccos,, Protected routes are also added. Protected routes are accessed via Passport access token.
 
 
 ## end points 
@@ -31,10 +31,12 @@ Saccos EndPoints
 ```php
 public function register(Request $request ,User $user){
    $validator = Validator::make($request->all(),[
-        'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'firstname' => ['required', 'string', 'max:255'],
+        'lastname' => ['required', 'string', 'max:255'],
+           // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+           'phone' => ['required', 'max:10', 'unique:users'],
            'password' => ['required', 'string', 'min:8'],
-          'c_password' =>'required|same:password',
+        //  'c_password' =>'required|same:password',
     ]);
 
     if ($validator->fails()) {
@@ -69,12 +71,14 @@ public function register(Request $request ,User $user){
 public function login(Request $request ,User $user){
 
         $request->validate([
-        'email' => 'required',
+        //'email' => 'required',
+        'phone' => 'required',
         'password' => 'required'
     ]);
         
 
-        if (Auth::attempt(['email' => request('email'), 
+       // if (Auth::attempt(['email' => request('email'), 
+        if (Auth::attempt(['phone' => request('phone'), 
             'password'=> request('password')])) {
             $user = Auth::user();
            $success['token'] = $user->createToken('my accessToken')->accessToken;
@@ -186,6 +190,11 @@ POST http://127.0.0.1:8000/api/auth/restoreuser/{id}
 ```
 GET  http://127.0.0.1:8000/api/auth/allusers
 ```json
+{"users":{"current_page":1,"data":[{"id":1,"firstname":"dennis","lastname":"mwangi","phone":721941386,"created_at":"2021-02-05T13:18:21.000000Z","updated_at":"2021-02-05T13:18:21.000000Z","deleted_at":null},{"id":2,"firstname":"dennis","lastname":"mwangi","phone":721941386,"created_at":"2021-02-05T13:19:34.000000Z","updated_at":"2021-02-05T13:19:34.000000Z","deleted_at":null}],"first_page_url":"http:\/\/127.0.0.1:8000\/api\/auth\/allusers?page=1","from":1,"last_page":2,"last_page_url":"http:\/\/127.0.0.1:8000\/api\/auth\/allusers?page=2","links":[{"url":null,"label":"Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/auth\/allusers?page=1","label":1,"active":true},{"url":"http:\/\/127.0.0.1:8000\/api\/auth\/allusers?page=2","label":2,"active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/auth\/allusers?page=2","label":"Next","active":false}],"next_page_url":"http:\/\/127.0.0.1:8000\/api\/auth\/allusers?page=2","path":"http:\/\/127.0.0.1:8000\/api\/auth\/allusers","per_page":2,"prev_page_url":null,"to":2,"total":3}}
+
+
+
+
 {
     "users": {
         "current_page": 1,
