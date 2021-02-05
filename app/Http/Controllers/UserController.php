@@ -146,7 +146,7 @@ public function register(Request $request ,User $user){
         'firstname' => ['required', 'string', 'max:255'],
           'lastname' => ['required', 'string', 'max:255'],
             //'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-        'phone' => 'required|digits:10','unique:users',
+        'phone' => ['required', 'max:10', 'unique:users'],
            'password' => ['required', 'string', 'min:8'],
          // 'c_password' =>'required|same:password',
     ]);
