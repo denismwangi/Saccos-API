@@ -109,12 +109,13 @@ class UserController extends Controller
     public function login(Request $request ,User $user){
 
         $request->validate([
-        'email' => 'required',
+     //   'email' => 'required',
+           'phone' => 'required|digits:10',
         'password' => 'required'
     ]);
         
 
-        if (Auth::attempt(['email' => request('email'), 
+        if (Auth::attempt(['phone' => request('phone'), 
             'password'=> request('password')])) {
             $user = Auth::user();
            $success['token'] = $user->createToken('my accessToken')->accessToken;
@@ -142,10 +143,12 @@ class UserController extends Controller
 public function register(Request $request ,User $user){
    
    $validator = Validator::make($request->all(),[
-        'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'firstname' => ['required', 'string', 'max:255'],
+          'lastname' => ['required', 'string', 'max:255'],
+            //'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'phone' => 'required|digits:10','unique:users',
            'password' => ['required', 'string', 'min:8'],
-          'c_password' =>'required|same:password',
+         // 'c_password' =>'required|same:password',
     ]);
 
     if ($validator->fails()) {
@@ -157,7 +160,7 @@ public function register(Request $request ,User $user){
     $input['password'] = Hash::make($input['password']);
     $user = User::create($input);
     $success['token'] = $user->createToken('my accessToken')->accessToken;
-    $success['name'] = $user->name;
+    $success['firstname'] = $user->firstname;
 
     return response()->json(['message' => "register success",'success'=>$success], $this->successStatus);
 
