@@ -392,13 +392,8 @@ then run the following command to create migrations in the databbase.
 ##### Passport Install
 run the following command to install passport
 ###### `php artisan passport:install`
-##### Make Auth System
-then run the following command to generate the auth Scaffolding.
-###### `php artisan make:auth`
-##### Database Seeding
-finally run the following command to seed the database with dummy content.
-###### `php artisan db:seed`
-
+then run the following command to create migrations in the databbase.
+###### `php artisan migrate`
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
