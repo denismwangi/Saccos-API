@@ -157,7 +157,7 @@ public function register(Request $request ,User $user){
         
     }
     $input = $request->all();
-    $input['password'] = Hash::make($input['password']);
+    $input['password'] = hash::make($input['password']);
     $user = User::create($input);
     $success['token'] = $user->createToken('my accessToken')->accessToken;
     $success['firstname'] = $user->firstname;

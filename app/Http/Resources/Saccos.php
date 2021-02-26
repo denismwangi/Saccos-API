@@ -19,7 +19,7 @@ class Saccos extends JsonResource
     public function with($request)
     {
         return[
-            "image resource" => "wertyuiopasdfghjklrtyuiortyu",
+            "image resource" => "http://accendservices.com/images/guideimages/peers.svg",
         ];
     }
 }

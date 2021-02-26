@@ -16,10 +16,11 @@ class SaccosController extends Controller
      */
     public function index()
     {
-        $sacco = Saccos::paginate(2);
+        //$sacco = Saccos::paginate(2);
+        $sacco = Saccos::all();
         return response()->json(["saccos"=>$sacco]);
 
-       // return new SaccosResource($sacco); 
+        //return new SaccosResource($sacco); 
     }
 
     /**
